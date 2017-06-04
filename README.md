@@ -21,7 +21,7 @@ www.python.org/jobs
 ├── my_pyjob
 │   ├── __init__.py
 │   ├── __pycache__
-│   ├── items.py			#クロールする対象について
+│   ├── items.py		#クロールする対象について
 │   ├── middlewares.py
 │   ├── pipelines.py
 │   ├── settings.py
