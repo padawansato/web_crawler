@@ -5,6 +5,7 @@ web crawler 習作
 Webクローラーを自作し，そのノウハウを習得する．
 
 ### ファイル構造
+```
 /Users/e155755/Desktop/web_crawler/my_pyjob% tree -L 3
 .
 ├── my_pyjob
@@ -18,7 +19,7 @@ Webクローラーを自作し，そのノウハウを習得する．
 │       ├── __init__.py
 │       └── __pycache__
 └── scrapy.cfg
-
+```
 
 
 ### 参考および引用元
