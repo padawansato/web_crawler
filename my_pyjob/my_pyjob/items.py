@@ -8,7 +8,7 @@
 import scrapy
 
 
-class PyjobItem(scrapy.Item):
+class MyPyjobItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
