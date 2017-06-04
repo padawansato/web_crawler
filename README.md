@@ -41,11 +41,17 @@ python	    クローラフレームワーク
 scrapy genspider コマンドで雛形となるクローラ（spider）を自動的に作成する．
 `
 %scrapy genspider クローラ名 クロール対象ドメイン
+`
 
+`
 %scrapy genspider my_pyjob_spider python.org
+`
 
+`
 /Users/e155755/Desktop/web_crawler/my_pyjob% less my_pyjob/spiders/my_pyjob_spider.py 
 `
+
+
 ```
 # -*- coding: utf-8 -*-
 import scrapy
