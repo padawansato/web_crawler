@@ -37,7 +37,7 @@ python	    クローラフレームワーク
 
 
 ### クローラの作成手順
-#### クローラーのひな形の生成
+#### クローラーのひな形の生成 
 scrapy genspider コマンドで雛形となるクローラ（spider）を自動的に作成する．
 `
 %scrapy genspider クローラ名 クロール対象ドメイン
@@ -51,7 +51,7 @@ scrapy genspider コマンドで雛形となるクローラ（spider）を自動
 /Users/e155755/Desktop/web_crawler/my_pyjob% less my_pyjob/spiders/my_pyjob_spider.py 
 `
 
-
+これにより，ひな形が作成された．
 ```
 # -*- coding: utf-8 -*-
 import scrapy
@@ -66,3 +66,13 @@ class MyPyjobSpiderSpider(scrapy.Spider):
         pass
 
 ```
+
+作成したクローラの雛形の中身
+##### 自動作成された変数
+name: クローラ名
+allowed_domain: クロール対象ドメイン
+start_urls: クロール開始ページのURLリスト
+##### 自動作成されたメソッド
+parse: クロールしたページのパース
+
+#### クローラー
