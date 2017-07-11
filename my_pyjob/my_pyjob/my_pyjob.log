@@ -1,90 +1,12 @@
-2017-06-05 08:54:10 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: my_pyjob)
-2017-06-05 08:54:10 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'my_pyjob', 'LOG_FILE': 'my_pyjob.log', 'FEED_FORMAT': 'json', 'DOWNLOAD_DELAY': 1, 'NEWSPIDER_MODULE': 'my_pyjob.spiders', 'FEED_URI': 'result.json', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['my_pyjob.spiders']}
-2017-06-05 08:54:10 [scrapy.middleware] INFO: Enabled extensions:
-['scrapy.extensions.telnet.TelnetConsole',
- 'scrapy.extensions.feedexport.FeedExporter',
- 'scrapy.extensions.corestats.CoreStats',
- 'scrapy.extensions.logstats.LogStats',
- 'scrapy.extensions.memusage.MemoryUsage']
-2017-06-05 08:54:11 [scrapy.middleware] INFO: Enabled downloader middlewares:
-['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
- 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
- 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
- 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
- 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
- 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
- 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
- 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
- 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
- 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
- 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
- 'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2017-06-05 08:54:11 [scrapy.middleware] INFO: Enabled spider middlewares:
-['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
- 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
- 'scrapy.spidermiddlewares.referer.RefererMiddleware',
- 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
- 'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2017-06-05 08:54:11 [scrapy.middleware] INFO: Enabled item pipelines:
-[]
-2017-06-05 08:54:11 [scrapy.core.engine] INFO: Spider opened
-2017-06-05 08:54:11 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2017-06-05 08:54:11 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
-2017-06-05 08:54:12 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://python.org/robots.txt> from <GET http://python.org/robots.txt>
-2017-06-05 08:54:15 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.python.org/robots.txt> from <GET https://python.org/robots.txt>
-2017-06-05 08:54:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/robots.txt> (referer: None)
-2017-06-05 08:54:20 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://python.org/jobs/> from <GET http://python.org/jobs/>
-2017-06-05 08:54:20 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.python.org/jobs/> from <GET https://python.org/jobs/>
-2017-06-05 08:54:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/robots.txt> (referer: None)
-2017-06-05 08:54:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/> (referer: None)
-2017-06-05 08:54:21 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.python.org/jobs/> (referer: None)
-Traceback (most recent call last):
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
-    yield next(it)
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
-    for x in result:
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
-    return (_set_referer(r) for r in result or ())
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
-    return (r for r in result or () if _filter(r))
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
-    return (r for r in result or () if _filter(r))
-  File "/Users/e155755/Desktop/web_crawler/my_pyjob/my_pyjob/spiders/my_pyjob_spider.py", line 13, in parse
-    soup = BeautifulSoup(response.body)
-NameError: name 'BeautifulSoup' is not defined
-2017-06-05 08:54:21 [scrapy.core.engine] INFO: Closing spider (finished)
-2017-06-05 08:54:21 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/request_bytes': 1523,
- 'downloader/request_count': 7,
- 'downloader/request_method_count/GET': 7,
- 'downloader/response_bytes': 86901,
- 'downloader/response_count': 7,
- 'downloader/response_status_count/200': 3,
- 'downloader/response_status_count/301': 4,
- 'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2017, 6, 4, 23, 54, 21, 842871),
- 'log_count/DEBUG': 8,
- 'log_count/ERROR': 1,
- 'log_count/INFO': 7,
- 'memusage/max': 53313536,
- 'memusage/startup': 53313536,
- 'response_received_count': 3,
- 'scheduler/dequeued': 3,
- 'scheduler/dequeued/memory': 3,
- 'scheduler/enqueued': 3,
- 'scheduler/enqueued/memory': 3,
- 'spider_exceptions/NameError': 1,
- 'start_time': datetime.datetime(2017, 6, 4, 23, 54, 11, 62301)}
-2017-06-05 08:54:21 [scrapy.core.engine] INFO: Spider closed (finished)
-2017-06-05 08:56:03 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: my_pyjob)
-2017-06-05 08:56:03 [scrapy.utils.log] INFO: Overridden settings: {'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['my_pyjob.spiders'], 'FEED_URI': 'result.json', 'FEED_FORMAT': 'json', 'LOG_FILE': 'my_pyjob.log', 'NEWSPIDER_MODULE': 'my_pyjob.spiders', 'BOT_NAME': 'my_pyjob', 'DOWNLOAD_DELAY': 1}
-2017-06-05 08:56:03 [scrapy.middleware] INFO: Enabled extensions:
+2017-06-05 09:37:48 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: my_pyjob)
+2017-06-05 09:37:48 [scrapy.utils.log] INFO: Overridden settings: {'FEED_URI': 'result.json', 'LOG_FILE': 'my_pyjob.log', 'SPIDER_MODULES': ['my_pyjob.spiders'], 'BOT_NAME': 'my_pyjob', 'ROBOTSTXT_OBEY': True, 'FEED_FORMAT': 'json', 'DOWNLOAD_DELAY': 1, 'NEWSPIDER_MODULE': 'my_pyjob.spiders'}
+2017-06-05 09:37:48 [scrapy.middleware] INFO: Enabled extensions:
 ['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.feedexport.FeedExporter',
  'scrapy.extensions.logstats.LogStats',
- 'scrapy.extensions.corestats.CoreStats',
- 'scrapy.extensions.feedexport.FeedExporter',
  'scrapy.extensions.telnet.TelnetConsole']
-2017-06-05 08:56:03 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2017-06-05 09:37:48 [scrapy.middleware] INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -97,103 +19,25 @@ NameError: name 'BeautifulSoup' is not defined
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2017-06-05 08:56:03 [scrapy.middleware] INFO: Enabled spider middlewares:
+2017-06-05 09:37:48 [scrapy.middleware] INFO: Enabled spider middlewares:
 ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2017-06-05 08:56:03 [scrapy.middleware] INFO: Enabled item pipelines:
+2017-06-05 09:37:48 [scrapy.middleware] INFO: Enabled item pipelines:
 []
-2017-06-05 08:56:03 [scrapy.core.engine] INFO: Spider opened
-2017-06-05 08:56:03 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2017-06-05 08:56:03 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
-2017-06-05 08:56:04 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://python.org/robots.txt> from <GET http://python.org/robots.txt>
-2017-06-05 08:56:07 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.python.org/robots.txt> from <GET https://python.org/robots.txt>
-2017-06-05 08:56:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/robots.txt> (referer: None)
-2017-06-05 08:56:10 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://python.org/jobs/> from <GET http://python.org/jobs/>
-2017-06-05 08:56:10 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.python.org/jobs/> from <GET https://python.org/jobs/>
-2017-06-05 08:56:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/robots.txt> (referer: None)
-2017-06-05 08:56:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/> (referer: None)
-2017-06-05 08:56:12 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.python.org/jobs/> (referer: None)
-Traceback (most recent call last):
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
-    yield next(it)
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
-    for x in result:
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
-    return (_set_referer(r) for r in result or ())
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
-    return (r for r in result or () if _filter(r))
-  File "/Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
-    return (r for r in result or () if _filter(r))
-  File "/Users/e155755/Desktop/web_crawler/my_pyjob/my_pyjob/spiders/my_pyjob_spider.py", line 13, in parse
-    soup = BeautifulSoup(response.body)
-NameError: name 'BeautifulSoup' is not defined
-2017-06-05 08:56:12 [scrapy.core.engine] INFO: Closing spider (finished)
-2017-06-05 08:56:12 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/request_bytes': 1523,
- 'downloader/request_count': 7,
- 'downloader/request_method_count/GET': 7,
- 'downloader/response_bytes': 86901,
- 'downloader/response_count': 7,
- 'downloader/response_status_count/200': 3,
- 'downloader/response_status_count/301': 4,
- 'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2017, 6, 4, 23, 56, 12, 239116),
- 'log_count/DEBUG': 8,
- 'log_count/ERROR': 1,
- 'log_count/INFO': 7,
- 'memusage/max': 53334016,
- 'memusage/startup': 53334016,
- 'response_received_count': 3,
- 'scheduler/dequeued': 3,
- 'scheduler/dequeued/memory': 3,
- 'scheduler/enqueued': 3,
- 'scheduler/enqueued/memory': 3,
- 'spider_exceptions/NameError': 1,
- 'start_time': datetime.datetime(2017, 6, 4, 23, 56, 3, 182852)}
-2017-06-05 08:56:12 [scrapy.core.engine] INFO: Spider closed (finished)
-2017-06-05 08:57:58 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: my_pyjob)
-2017-06-05 08:57:58 [scrapy.utils.log] INFO: Overridden settings: {'FEED_FORMAT': 'json', 'DOWNLOAD_DELAY': 1, 'FEED_URI': 'result.json', 'ROBOTSTXT_OBEY': True, 'LOG_FILE': 'my_pyjob.log', 'BOT_NAME': 'my_pyjob', 'NEWSPIDER_MODULE': 'my_pyjob.spiders', 'SPIDER_MODULES': ['my_pyjob.spiders']}
-2017-06-05 08:57:58 [scrapy.middleware] INFO: Enabled extensions:
-['scrapy.extensions.logstats.LogStats',
- 'scrapy.extensions.corestats.CoreStats',
- 'scrapy.extensions.memusage.MemoryUsage',
- 'scrapy.extensions.feedexport.FeedExporter',
- 'scrapy.extensions.telnet.TelnetConsole']
-2017-06-05 08:57:58 [scrapy.middleware] INFO: Enabled downloader middlewares:
-['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
- 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
- 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
- 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
- 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
- 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
- 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
- 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
- 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
- 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
- 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
- 'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2017-06-05 08:57:58 [scrapy.middleware] INFO: Enabled spider middlewares:
-['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
- 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
- 'scrapy.spidermiddlewares.referer.RefererMiddleware',
- 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
- 'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2017-06-05 08:57:58 [scrapy.middleware] INFO: Enabled item pipelines:
-[]
-2017-06-05 08:57:58 [scrapy.core.engine] INFO: Spider opened
-2017-06-05 08:57:58 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2017-06-05 08:57:58 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
-2017-06-05 08:57:58 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://python.org/robots.txt> from <GET http://python.org/robots.txt>
-2017-06-05 08:58:01 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.python.org/robots.txt> from <GET https://python.org/robots.txt>
-2017-06-05 08:58:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/robots.txt> (referer: None)
-2017-06-05 08:58:06 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://python.org/jobs/> from <GET http://python.org/jobs/>
-2017-06-05 08:58:06 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.python.org/jobs/> from <GET https://python.org/jobs/>
-2017-06-05 08:58:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/robots.txt> (referer: None)
-2017-06-05 08:58:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/> (referer: None)
-2017-06-05 08:58:09 [py.warnings] WARNING: /Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/bs4/__init__.py:166: UserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("lxml"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+2017-06-05 09:37:48 [scrapy.core.engine] INFO: Spider opened
+2017-06-05 09:37:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-06-05 09:37:48 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-06-05 09:37:49 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://python.org/robots.txt> from <GET http://python.org/robots.txt>
+2017-06-05 09:37:52 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.python.org/robots.txt> from <GET https://python.org/robots.txt>
+2017-06-05 09:37:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/robots.txt> (referer: None)
+2017-06-05 09:37:55 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://python.org/jobs/> from <GET http://python.org/jobs/>
+2017-06-05 09:37:56 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.python.org/jobs/> from <GET https://python.org/jobs/>
+2017-06-05 09:37:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/robots.txt> (referer: None)
+2017-06-05 09:37:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/> (referer: None)
+2017-06-05 09:37:59 [py.warnings] WARNING: /Users/e155755/.pyenv/versions/anaconda3-4.1.1/lib/python3.5/site-packages/bs4/__init__.py:166: UserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("lxml"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
 
 To get rid of this warning, change this:
 
@@ -205,35 +49,35 @@ to this:
 
   markup_type=markup_type))
 
-2017-06-05 08:58:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=2> (referer: https://www.python.org/jobs/)
-2017-06-05 08:58:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=3> (referer: https://www.python.org/jobs/?page=2)
-2017-06-05 08:58:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=4> (referer: https://www.python.org/jobs/?page=3)
-2017-06-05 08:58:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=5> (referer: https://www.python.org/jobs/?page=4)
-2017-06-05 08:58:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=6> (referer: https://www.python.org/jobs/?page=5)
-2017-06-05 08:58:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/> (referer: https://www.python.org/jobs/?page=6)
-2017-06-05 08:58:19 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET https://www.python.org/jobs/?page=2> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
-2017-06-05 08:58:19 [scrapy.core.engine] INFO: Closing spider (finished)
-2017-06-05 08:58:19 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+2017-06-05 09:37:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=2> (referer: https://www.python.org/jobs/)
+2017-06-05 09:38:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=3> (referer: https://www.python.org/jobs/?page=2)
+2017-06-05 09:38:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=4> (referer: https://www.python.org/jobs/?page=3)
+2017-06-05 09:38:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=5> (referer: https://www.python.org/jobs/?page=4)
+2017-06-05 09:38:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/?page=6> (referer: https://www.python.org/jobs/?page=5)
+2017-06-05 09:38:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.python.org/jobs/> (referer: https://www.python.org/jobs/?page=6)
+2017-06-05 09:38:05 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET https://www.python.org/jobs/?page=2> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2017-06-05 09:38:05 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-06-05 09:38:05 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 3129,
  'downloader/request_count': 13,
  'downloader/request_method_count/GET': 13,
- 'downloader/response_bytes': 572084,
+ 'downloader/response_bytes': 572074,
  'downloader/response_count': 13,
  'downloader/response_status_count/200': 9,
  'downloader/response_status_count/301': 4,
  'dupefilter/filtered': 1,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2017, 6, 4, 23, 58, 19, 140192),
+ 'finish_time': datetime.datetime(2017, 6, 5, 0, 38, 5, 787370),
  'log_count/DEBUG': 15,
  'log_count/INFO': 7,
  'log_count/WARNING': 1,
- 'memusage/max': 54169600,
- 'memusage/startup': 54165504,
+ 'memusage/max': 54005760,
+ 'memusage/startup': 54005760,
  'request_depth_max': 7,
  'response_received_count': 9,
  'scheduler/dequeued': 9,
  'scheduler/dequeued/memory': 9,
  'scheduler/enqueued': 9,
  'scheduler/enqueued/memory': 9,
- 'start_time': datetime.datetime(2017, 6, 4, 23, 57, 58, 360423)}
-2017-06-05 08:58:19 [scrapy.core.engine] INFO: Spider closed (finished)
+ 'start_time': datetime.datetime(2017, 6, 5, 0, 37, 48, 448706)}
+2017-06-05 09:38:05 [scrapy.core.engine] INFO: Spider closed (finished)

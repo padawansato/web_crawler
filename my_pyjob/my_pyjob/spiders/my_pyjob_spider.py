@@ -8,10 +8,23 @@ class MyPyjobSpiderSpider(scrapy.Spider):
     allowed_domains = ['python.org'] #クローリング対象ドメイン
     start_urls = ['http://python.org/jobs/']
 
+
+
     def parse(self, response): 
         # ページ中のジョブオファー情報を全て取得 
-        # beautifulsoupを用いる場合
         soup = BeautifulSoup(response.body)
+        links = soup.find_all('a')
+        for link in links:
+        h2 = soup.find('h2', id="listing-company")
+        a_tag = h2.a
+        a_string = a_tag.string
+        print a_string
+        job['title'] = soup.find('a', id="href")
+            
+
+
+        # beautifulsoupを用いる場合
+
       # 次のページへのリンクが入った <li> を取得する
         next_page = soup.find('li', {'class': 'next'})
         # <li> の中に入った <a> を取り出す
